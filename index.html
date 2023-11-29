@@ -38,7 +38,9 @@
                     </ul>
                 </nav>
             </div>
-
+        
+        
+            <!-- Mobile nav -->
 
             <button class="menu lg:hidden ham-menu-btn z-50" id="ham-menu-btn" onclick="this.classList.toggle('opened');this.setAttribute('aria-expanded', this.classList.contains('opened'))" aria-label="Main Menu">
                 <svg width="50" height="50" viewBox="0 0 100 100">
@@ -50,11 +52,11 @@
         </div>
 
         <div>
-        <div class="flex flex-row items-center lg:hidden">
+        <!-- <div class="flex flex-row items-center lg:hidden">
             <div class="donate w-full">
-                <button class="bg-primary text-primary_darker w-full py-3.5 font-bold outline-8">Donate</button>
+                <button class="bg-primary text-primary_darker w-full py-3.5 font-bold">Donate</button>
             </div>
-        </div>
+        </div> -->
 
         <nav class="fixed left-0 top-0 bottom-0 w-8/12 flex flex-col bg-white min-h-max justify-center shadow-2xl max-w-sm ham-menu ml-[-100%] z-50" id="ham-menu">
             <ul class="ml-[20%] lg:flex">
@@ -71,6 +73,18 @@
     </header>
 
     <!-- HEADER END -->
+
+    <!-- HERO START -->
+
+    <section>
+        <div class="hero-container px-5 bg-primary_darker">
+            <div class="hero-text-container flex max-w-3xl mx-auto py-[10rem]">
+                <h1 class="hero-text py-10 text-[1.7rem] lg:text-7xl font-display text-center text-primary leading-[1.1]" id="hero-text">Art that <span class="highlight">inspires</span>, Donations that <span class="highlight">empower</span>, Join our cause.</h1>
+            </div>
+        </div>
+    </section>
+
+    <!-- HERO END -->
     
 </body>
 </html>
