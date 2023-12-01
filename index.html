@@ -9,6 +9,25 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
     <script defer src="main.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.29/bundled/lenis.min.js"></script> 
+    <script>
+        const lenis = new Lenis({
+            duration: 1.2,
+            easing: (t) => (t === 1 ? 1 : 1 - Math.pow(2, -10 * t)),
+            direction: "vertical",
+            gestureDirection: "vertical",
+            smooth: true,
+            smoothTouch: false,
+            touchMultiplier: 2,
+        });
+
+        function raf(time) {
+            lenis.raf(time);
+            requestAnimationFrame(raf);
+        }
+
+        requestAnimationFrame(raf);
+    </script>
     <title>AFCSR</title>
 </head>
 
@@ -31,8 +50,8 @@
 
                 <nav class="hidden lg:block lg:ml-10">
                     <ul class="hidden lg:flex flex-row items-center">
-                        <li class="mr-10"><a href="" class="hover:transition-[underline,color] hover:text-primary_darker hover:underline">About Us</a></li>
-                        <li class="mr-10"><a href="" class="hover:transition-[underline,color] hover:text-primary_darker hover:underline">Mission And Impact</a></li>
+                        <li class="mr-10"><a href="#about-us" onclick="lenis.scrollTo('#about-us')" class="hover:transition-[underline,color] hover:text-primary_darker hover:underline">About Us</a></li>
+                        <li class="mr-10"><a href="#mission" onclick="lenis.scrollTo('#mission')" class="hover:transition-[underline,color] hover:text-primary_darker hover:underline">Our Mission</a></li>
                         <li class="mr-10"><a href="" class="hover:transition-[underline,color] hover:text-primary_darker hover:underline">Previous Donations</a></li>
                         <li><a href="" class="hover:transition-[underline,color] hover:text-primary_darker hover:underline">Contact Us</a></li>
                     </ul>
@@ -60,12 +79,12 @@
 
         <nav class="fixed left-0 top-0 bottom-0 w-8/12 flex flex-col bg-white min-h-max justify-center shadow-2xl max-w-sm ham-menu ml-[-100%] z-50" id="ham-menu">
             <ul class="ml-[20%] lg:flex">
-                <li class="mb-5"><a href="" class="hover:text-primary_darker transition-colors">About Us</a></li>
-                <li class="mb-5 "><a href="" class="hover:text-primary_darker transition-colors">Mission And Impact</a></li>
+                <li class="mb-5"><a href="#about-us" onclick="lenis.scrollTo('#about-us')" class="hover:text-primary_darker transition-colors">About Us</a></li>
+                <li class="mb-5 "><a href="#mission" onclick="lenis.scrollTo('#mission')" class="hover:text-primary_darker transition-colors">Our Mission</a></li>
                 <li class="mb-5 "><a href="" class="hover:text-primary_darker transition-colors">Previous Donations</a></li>
                 <li class="mb-5 "><a href="" class="hover:text-primary_darker transition-colors">Contact Us</a></li>
                 <li><a href="" class="hover:text-primary_darker transition-colors">Donate</a></li>
-            </ul>
+            </ul>   
         </nav>
 
         <div class="overlay hidden lg:hidden fixed left-0 top-0 bottom-0 w-full h-full bg-black opacity-50 z-10" id="overlay"></div>
@@ -76,15 +95,42 @@
 
     <!-- HERO START -->
 
-    <section>
-        <div class="hero-container px-5 bg-primary_darker">
-            <div class="hero-text-container flex max-w-3xl mx-auto py-[10rem]">
-                <h1 class="hero-text py-10 text-[1.7rem] lg:text-7xl font-display text-center text-primary leading-[1.1]" id="hero-text">Art that <span class="highlight">inspires</span>, Donations that <span class="highlight">empower</span>, Join our cause.</h1>
+    <section id="hero" class="bg-primary_darker flex items-center justify-center min-h-screen">
+        <div class="hero-container px-5 flex items-center h-full">
+            <div class="hero-text-container max-w-3xl mx-auto ">
+                <h1 class="hero-text py-10 text-[2rem] lg:text-7xl font-display text-center text-primary leading-[1.1]" id="hero-text">Art that <span class="highlight">inspires</span>, Donations that <span class="highlight">empower</span>, Join our cause.</h1>
             </div>
         </div>
     </section>
-
     <!-- HERO END -->
+
+    <!-- ABOUT US START -->
+    <section id="about-us" class="bg-white">
+        <div class="about-us-container px-5 flex flex-wrap items-center justify-center">
+            <div class="about-us-text-container max-w-3xl">
+                <h1 class="about-us-heading about-us-text text-[1.7rem] lg:text-7xl font-display text-primary_darker leading-[1.1] to-animate">Who we are</h1>
+                <p class="about-us-text text-primary_dark mt-10 max-w-prose to-animate">We are a group of students. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo laboriosam odio provident animi reiciendis hic! Accusamus quis tenetur aliquid fugiat dolore. Eius natus, corrupti alias ad inventore sint pariatur dicta! Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum. Lorem ipsum dolor sit amet consectetur.</p>
+            </div>
+            <div class="max-w-lg">
+                <img class="to-animate about-us-img" src="assets/images/about-us.svg" alt="about us image">
+            </div>
+        </div>
+    </section>
+    <!-- ABOUT US END -->
+
+    <!-- MISSION START -->
+    <section id="mission" class="bg-primary_dark">
+        <div class="mission-container px-5 flex flex-wrap-reverse items-center justify-center">
+            <div class="max-w-lg">
+                <img class="to-animate mission-img" src="assets/images/mission.svg" alt="mission image">
+            </div>
+            <div class="mission-text-container max-w-3xl mx-auto">
+                <h1 class="mission-heading mission-text text-[1.7rem] lg:text-right lg:text-7xl font-display text-white leading-[1.1] to-animate">Our Mission</h1>
+                <p class="mission-text text-white mt-10 lg:text-right to-animate">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora quam nobis explicabo laudantium praesentium velit hic sapiente, veritatis voluptate. Magnam vel aperiam, nesciunt obcaecati sed tempore sint dicta nam aut.
+                Molestias repellat eius adipisci sequi ipsam veniam excepturi blanditiis animi esse laborum, sed quas soluta error veritatis odit porro enim culpa repellendus illum corporis, necessitatibus et. Itaque modi hic eveniet!</p>
+            </div>
+        </div>
+    </section>
     
 </body>
 </html>

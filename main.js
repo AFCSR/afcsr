@@ -1,3 +1,5 @@
+// Menu Toggle
+
 const menu = document.querySelector('#ham-menu');
 const menu_btn = document.querySelector('#ham-menu-btn');
 overlay = document.querySelector('#overlay');
@@ -21,39 +23,29 @@ menu_btn.addEventListener('click', () => {
     }
 });
 
+// Intersection Observer
 
-function scrollTrigger(selector, options = {}) {
-    let els = document.querySelectorAll(selector)
-    els = Array.from(els)
-    els.forEach(el => {
-        addObserver(el, options)
-    })
-}
-function addObserver(el, options) {
-    if (!('IntersectionObserver' in window)) {
-        if (options.cb) {
-            options.cb(el)
+let options = {
+    rootmargin: "200px",
+};
+
+let callback = (entries) => {
+    entries.map((entry) => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add("animate");
         } else {
-            entry.target.classList.add('active')
+            entry.target.classList.remove("animate");
         }
-        // We don't need to execute the rest of the code
-        return
-    }
+    });
+};
 
-    let observer = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                if (options.cb) {
-                    options.cb(el)
-                } else {
-                    entry.target.classList.add('active')
-                }
-                observer.unobserve(entry.target)
-            }
-        })
-    }, options)
-    observer.observe(el)
-}
+const observer = new IntersectionObserver(callback, options);
 
-heroText = document.querySelector('.hero-text');
-scrollTrigger('.hero-text')
+let elements = document.querySelectorAll(".to-animate");
+
+elements.forEach((elem) => {
+    observer.observe(elem);
+} );
+
+// Lenis Scroll
+
