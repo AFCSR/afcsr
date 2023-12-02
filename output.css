@@ -218,6 +218,42 @@ section {
   }
 }
 
+@keyframes scale {
+  from,to {
+    transform: scale(0);
+  }
+
+  50% {
+    transform: scale(1);
+  }
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(180deg);
+  }
+}
+
+.highlight {
+  position: relative;
+  display: inline-block;
+}
+
+.highlight-sparkle {
+  top: 2px;
+  position: absolute;
+  animation: scale 1s ease forwards infinite;
+  transition: opacity 100ms ease;
+}
+
+.highlight-sparkle > svg {
+  animation: rotate 1s linear infinite;
+}
+
 /*
 ! tailwindcss v3.3.5 | MIT License | https://tailwindcss.com
 */
@@ -783,6 +819,11 @@ video {
   margin-right: auto;
 }
 
+.my-16 {
+  margin-top: 4rem;
+  margin-bottom: 4rem;
+}
+
 .mb-5 {
   margin-bottom: 1.25rem;
 }
@@ -832,16 +873,16 @@ video {
   width: 66.666667%;
 }
 
-.w-\[80px\] {
-  width: 80px;
-}
-
 .w-full {
   width: 100%;
 }
 
 .max-w-3xl {
   max-width: 48rem;
+}
+
+.max-w-\[50px\] {
+  max-width: 50px;
 }
 
 .max-w-lg {
@@ -932,6 +973,11 @@ video {
   padding-right: 1.5rem;
 }
 
+.px-\[30\%\] {
+  padding-left: 30%;
+  padding-right: 30%;
+}
+
 .py-10 {
   padding-top: 2.5rem;
   padding-bottom: 2.5rem;
@@ -945,6 +991,11 @@ video {
 .py-3\.5 {
   padding-top: 0.875rem;
   padding-bottom: 0.875rem;
+}
+
+.py-4 {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
 }
 
 .py-5 {
@@ -966,6 +1017,11 @@ video {
 
 .text-\[2rem\] {
   font-size: 2rem;
+}
+
+.text-sm {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
 }
 
 .font-bold {
@@ -1076,6 +1132,10 @@ video {
     display: none;
   }
 
+  .lg\:max-w-\[80px\] {
+    max-width: 80px;
+  }
+
   .lg\:text-right {
     text-align: right;
   }
@@ -1083,5 +1143,10 @@ video {
   .lg\:text-7xl {
     font-size: 4.5rem;
     line-height: 1;
+  }
+
+  .lg\:text-base {
+    font-size: 1rem;
+    line-height: 1.5rem;
   }
 }

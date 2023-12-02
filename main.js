@@ -47,5 +47,16 @@ elements.forEach((elem) => {
     observer.observe(elem);
 } );
 
-// Lenis Scroll
 
+const sparkles = document.querySelectorAll('.highlight-sparkle');
+
+setInterval(() => {
+    sparkles.forEach(sparkle => {
+        // sparkle.style.opacity = 0;
+        sparkle.style.left = (Math.random() * 100) - 10 + '%';
+        sparkle.style.width = 20 + Math.random() * 20 + 'px';
+        sparkle.style.animation = 'none'; // Reset animation to allow restarting
+        void sparkle.offsetWidth; // Trigger reflow to restart animation
+        sparkle.style.animation = ''; // Re-enable animation
+    });
+}, 1000);

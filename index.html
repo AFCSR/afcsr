@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,7 +10,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
     <script defer src="main.js"></script>
-    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.29/bundled/lenis.min.js"></script> 
+    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.29/bundled/lenis.min.js"></script>
     <script>
         const lenis = new Lenis({
             duration: 1.2,
@@ -39,55 +40,74 @@
         <div class="px-10 py-5 flex items-center justify-between shadow-xl">
             <div class="logo">
                 <div class="logo-container flex items-center font-display">
-                    <img class="w-[80px] rounded-sm" src="assets/images/logo.jpg" alt="art for cause by shalini reddy logo">
-                    <h4 class="ml-3">Art For Cause<br>By Shalini Reddy</h4>
+                    <img class="max-w-[50px] lg:max-w-[80px] rounded-sm" src="assets/images/logo.jpg"
+                        alt="art for cause by shalini reddy logo">
+                    <h4 class="ml-3 text-sm lg:text-base">Art For Cause<br>By Shalini Reddy</h4>
                 </div>
             </div>
-            
+
             <div class="flex items-center">
-                
-                <button class="hidden lg:block px-6 py-3 rounded-lg bg-primary shadow-lg font-bold text-primary_darker hover:outline-2 hover:outline-dark hover:outline ease-in-out duration-100 transistion-[outline]">Donate</button>
+
+                <button
+                    class="hidden lg:block px-6 py-3 rounded-lg bg-primary shadow-lg font-bold text-primary_darker hover:outline-2 hover:outline-dark hover:outline ease-in-out duration-100 transistion-[outline]">Donate</button>
 
                 <nav class="hidden lg:block lg:ml-10">
                     <ul class="hidden lg:flex flex-row items-center">
-                        <li class="mr-10"><a href="#about-us" onclick="lenis.scrollTo('#about-us')" class="hover:transition-[underline,color] hover:text-primary_darker hover:underline">About Us</a></li>
-                        <li class="mr-10"><a href="#mission" onclick="lenis.scrollTo('#mission')" class="hover:transition-[underline,color] hover:text-primary_darker hover:underline">Our Mission</a></li>
-                        <li class="mr-10"><a href="" class="hover:transition-[underline,color] hover:text-primary_darker hover:underline">Previous Donations</a></li>
-                        <li><a href="" class="hover:transition-[underline,color] hover:text-primary_darker hover:underline">Contact Us</a></li>
+                        <li class="mr-10"><a href="#about-us" onclick="lenis.scrollTo('#about-us')"
+                                class="hover:transition-[underline,color] hover:text-primary_darker hover:underline">About
+                                Us</a></li>
+                        <li class="mr-10"><a href="#mission" onclick="lenis.scrollTo('#mission')"
+                                class="hover:transition-[underline,color] hover:text-primary_darker hover:underline">Our
+                                Mission</a></li>
+                        <li class="mr-10"><a href=""
+                                class="hover:transition-[underline,color] hover:text-primary_darker hover:underline">Previous
+                                Donations</a></li>
+                        <li><a href=""
+                                class="hover:transition-[underline,color] hover:text-primary_darker hover:underline">Contact
+                                Us</a></li>
                     </ul>
                 </nav>
             </div>
-        
-        
+
+
             <!-- Mobile nav -->
 
-            <button class="menu lg:hidden ham-menu-btn z-50" id="ham-menu-btn" onclick="this.classList.toggle('opened');this.setAttribute('aria-expanded', this.classList.contains('opened'))" aria-label="Main Menu">
+            <button class="menu lg:hidden ham-menu-btn z-50" id="ham-menu-btn"
+                onclick="this.classList.toggle('opened');this.setAttribute('aria-expanded', this.classList.contains('opened'))"
+                aria-label="Main Menu">
                 <svg width="50" height="50" viewBox="0 0 100 100">
-                  <path class="line line1" d="M 20,29.000046 H 80.000231 C 80.000231,29.000046 94.498839,28.817352 94.532987,66.711331 94.543142,77.980673 90.966081,81.670246 85.259173,81.668997 79.552261,81.667751 75.000211,74.999942 75.000211,74.999942 L 25.000021,25.000058" />
-                  <path class="line line2" d="M 20,50 H 80" />
-                  <path class="line line3" d="M 20,70.999954 H 80.000231 C 80.000231,70.999954 94.498839,71.182648 94.532987,33.288669 94.543142,22.019327 90.966081,18.329754 85.259173,18.331003 79.552261,18.332249 75.000211,25.000058 75.000211,25.000058 L 25.000021,74.999942" />
+                    <path class="line line1"
+                        d="M 20,29.000046 H 80.000231 C 80.000231,29.000046 94.498839,28.817352 94.532987,66.711331 94.543142,77.980673 90.966081,81.670246 85.259173,81.668997 79.552261,81.667751 75.000211,74.999942 75.000211,74.999942 L 25.000021,25.000058" />
+                    <path class="line line2" d="M 20,50 H 80" />
+                    <path class="line line3"
+                        d="M 20,70.999954 H 80.000231 C 80.000231,70.999954 94.498839,71.182648 94.532987,33.288669 94.543142,22.019327 90.966081,18.329754 85.259173,18.331003 79.552261,18.332249 75.000211,25.000058 75.000211,25.000058 L 25.000021,74.999942" />
                 </svg>
             </button>
         </div>
 
         <div>
-        <!-- <div class="flex flex-row items-center lg:hidden">
+            <!-- <div class="flex flex-row items-center lg:hidden">
             <div class="donate w-full">
                 <button class="bg-primary text-primary_darker w-full py-3.5 font-bold">Donate</button>
             </div>
         </div> -->
 
-        <nav class="fixed left-0 top-0 bottom-0 w-8/12 flex flex-col bg-white min-h-max justify-center shadow-2xl max-w-sm ham-menu ml-[-100%] z-50" id="ham-menu">
-            <ul class="ml-[20%] lg:flex">
-                <li class="mb-5"><a href="#about-us" onclick="lenis.scrollTo('#about-us')" class="hover:text-primary_darker transition-colors">About Us</a></li>
-                <li class="mb-5 "><a href="#mission" onclick="lenis.scrollTo('#mission')" class="hover:text-primary_darker transition-colors">Our Mission</a></li>
-                <li class="mb-5 "><a href="" class="hover:text-primary_darker transition-colors">Previous Donations</a></li>
-                <li class="mb-5 "><a href="" class="hover:text-primary_darker transition-colors">Contact Us</a></li>
-                <li><a href="" class="hover:text-primary_darker transition-colors">Donate</a></li>
-            </ul>   
-        </nav>
+            <nav class="fixed left-0 top-0 bottom-0 w-8/12 flex flex-col bg-white min-h-max justify-center shadow-2xl max-w-sm ham-menu ml-[-100%] z-50"
+                id="ham-menu">
+                <ul class="ml-[20%] lg:flex">
+                    <li class="mb-5"><a href="#about-us" onclick="lenis.scrollTo('#about-us')"
+                            class="hover:text-primary_darker transition-colors">About Us</a></li>
+                    <li class="mb-5 "><a href="#mission" onclick="lenis.scrollTo('#mission')"
+                            class="hover:text-primary_darker transition-colors">Our Mission</a></li>
+                    <li class="mb-5 "><a href="" class="hover:text-primary_darker transition-colors">Previous
+                            Donations</a></li>
+                    <li class="mb-5 "><a href="" class="hover:text-primary_darker transition-colors">Contact Us</a></li>
+                    <li><a href="" class="hover:text-primary_darker transition-colors">Donate</a></li>
+                </ul>
+            </nav>
 
-        <div class="overlay hidden lg:hidden fixed left-0 top-0 bottom-0 w-full h-full bg-black opacity-50 z-10" id="overlay"></div>
+            <div class="overlay hidden lg:hidden fixed left-0 top-0 bottom-0 w-full h-full bg-black opacity-50 z-10"
+                id="overlay"></div>
 
     </header>
 
@@ -96,20 +116,63 @@
     <!-- HERO START -->
 
     <section id="hero" class="bg-primary_darker flex items-center justify-center min-h-screen">
-        <div class="hero-container px-5 flex items-center h-full">
+        <div class="hero-container px-5 flex flex-col items-center h-full">
             <div class="hero-text-container max-w-3xl mx-auto ">
-                <h1 class="hero-text py-10 text-[2rem] lg:text-7xl font-display text-center text-primary leading-[1.1]" id="hero-text">Art that <span class="highlight">inspires</span>, Donations that <span class="highlight">empower</span>, Join our cause.</h1>
+                <h1 class="hero-text py-10 text-[2rem] lg:text-7xl font-display text-center text-primary leading-[1.1]"
+                    id="hero-text">Art that <span class="highlight">inspires
+                        <span
+                            class="highlight-sparkle"><svg version="1.1" id="sparkle_x5F_stars"
+                                xmlns="http://www.w3.org/2000/svg" x="0" y="0" viewBox="0 0 128 128"
+                                style="enable-background:new 0 0 128 128" xml:space="preserve">
+                                <style>
+                                    .st2 {
+                                        display: none;
+                                        fill: rgb(255, 215, 0)
+                                    }
+                                </style>
+                                <g id="row1">
+                                    <path id="icon:5"
+                                        d="m128 62.6-38.3 6.6c-9.9 1.7-17.6 9.6-18.9 19.6L65.4 128l-6.6-38.3c-1.7-9.9-9.6-17.6-19.6-18.9L0 65.4l38.3-6.6c9.9-1.7 17.6-9.6 18.9-19.6L62.6 0l6.6 38.3c1.7 9.9 9.6 17.6 19.6 18.9l39.2 5.4z"
+                                        style="fill:rgb(255, 215, 0)" />
+                                </g>
+                            </svg></span>
+                    </span>, Donations that <span class="highlight">empower
+                        <span class="highlight-sparkle"><svg version="1.1" id="sparkle_x5F_stars" xmlns="http://www.w3.org/2000/svg"
+                        x="0" y="0" viewBox="0 0 128 128" style="enable-background:new 0 0 128 128"
+                        xml:space="preserve">
+                        <style>
+                            .st2 {
+                                display: none;
+                                fill: rgb(255, 215, 0)
+                            }
+                        </style>
+                        <g id="row1">
+                            <path id="icon:5"
+                                d="m128 62.6-38.3 6.6c-9.9 1.7-17.6 9.6-18.9 19.6L65.4 128l-6.6-38.3c-1.7-9.9-9.6-17.6-19.6-18.9L0 65.4l38.3-6.6c9.9-1.7 17.6-9.6 18.9-19.6L62.6 0l6.6 38.3c1.7 9.9 9.6 17.6 19.6 18.9l39.2 5.4z"
+                                style="fill:rgb(255, 215, 0)" />
+                        </g>
+                    </svg></span></span>, Join our cause.
+                </h1>
             </div>
+            <button
+                class="lg:hidden px-[30%] py-4 rounded-lg bg-primary shadow-lg font-bold text-primary_darker duration-100 transistion-[outline]">Donate
+                Now</button>
         </div>
     </section>
     <!-- HERO END -->
 
     <!-- ABOUT US START -->
     <section id="about-us" class="bg-white">
-        <div class="about-us-container px-5 flex flex-wrap items-center justify-center">
+        <div class="about-us-container px-5 flex flex-wrap items-center justify-center my-16">
             <div class="about-us-text-container max-w-3xl">
-                <h1 class="about-us-heading about-us-text text-[1.7rem] lg:text-7xl font-display text-primary_darker leading-[1.1] to-animate">Who we are</h1>
-                <p class="about-us-text text-primary_dark mt-10 max-w-prose to-animate">We are a group of students. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo laboriosam odio provident animi reiciendis hic! Accusamus quis tenetur aliquid fugiat dolore. Eius natus, corrupti alias ad inventore sint pariatur dicta! Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum. Lorem ipsum dolor sit amet consectetur.</p>
+                <h1
+                    class="about-us-heading about-us-text text-[1.7rem] lg:text-7xl font-display text-primary_darker leading-[1.1] to-animate">
+                    Who we are</h1>
+                <p class="about-us-text text-primary_dark mt-10 max-w-prose to-animate">We are a group of students.
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo laboriosam odio provident animi
+                    reiciendis hic! Accusamus quis tenetur aliquid fugiat dolore. Eius natus, corrupti alias ad
+                    inventore sint pariatur dicta! Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam,
+                    voluptatum. Lorem ipsum dolor sit amet consectetur.</p>
             </div>
             <div class="max-w-lg">
                 <img class="to-animate about-us-img" src="assets/images/about-us.svg" alt="about us image">
@@ -120,17 +183,24 @@
 
     <!-- MISSION START -->
     <section id="mission" class="bg-primary_dark">
-        <div class="mission-container px-5 flex flex-wrap-reverse items-center justify-center">
+        <div class="mission-container px-5 flex flex-wrap-reverse items-center justify-center my-16">
             <div class="max-w-lg">
                 <img class="to-animate mission-img" src="assets/images/mission.svg" alt="mission image">
             </div>
             <div class="mission-text-container max-w-3xl mx-auto">
-                <h1 class="mission-heading mission-text text-[1.7rem] lg:text-right lg:text-7xl font-display text-white leading-[1.1] to-animate">Our Mission</h1>
-                <p class="mission-text text-white mt-10 lg:text-right to-animate">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora quam nobis explicabo laudantium praesentium velit hic sapiente, veritatis voluptate. Magnam vel aperiam, nesciunt obcaecati sed tempore sint dicta nam aut.
-                Molestias repellat eius adipisci sequi ipsam veniam excepturi blanditiis animi esse laborum, sed quas soluta error veritatis odit porro enim culpa repellendus illum corporis, necessitatibus et. Itaque modi hic eveniet!</p>
+                <h1
+                    class="mission-heading mission-text text-[1.7rem] lg:text-right lg:text-7xl font-display text-white leading-[1.1] to-animate">
+                    Our Mission</h1>
+                <p class="mission-text text-white mt-10 lg:text-right to-animate">Lorem ipsum dolor sit amet consectetur
+                    adipisicing elit. Tempora quam nobis explicabo laudantium praesentium velit hic sapiente, veritatis
+                    voluptate. Magnam vel aperiam, nesciunt obcaecati sed tempore sint dicta nam aut.
+                    Molestias repellat eius adipisci sequi ipsam veniam excepturi blanditiis animi esse laborum, sed
+                    quas soluta error veritatis odit porro enim culpa repellendus illum corporis, necessitatibus et.
+                    Itaque modi hic eveniet!</p>
             </div>
         </div>
     </section>
-    
+
 </body>
+
 </html>

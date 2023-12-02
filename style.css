@@ -220,6 +220,42 @@ section {
     }
 }
 
+@keyframes scale {
+    from,to {
+        transform: scale(0);
+    }
+
+    50% {
+        transform: scale(1);
+    }
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(180deg);
+    }
+}
+
+.highlight {
+    position: relative;
+    display: inline-block;
+}
+
+.highlight-sparkle {
+    top: 2px;
+    position: absolute;
+    animation: scale 1s ease forwards infinite;
+    transition: opacity 100ms ease;
+}
+
+.highlight-sparkle > svg {
+    animation: rotate 1s linear infinite;
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
