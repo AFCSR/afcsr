@@ -60,8 +60,7 @@
                                 class="hover:transition-[underline,color] hover:text-primary_darker hover:underline">Our
                                 Mission</a></li>
                         <li class="mr-10"><a href=""
-                                class="hover:transition-[underline,color] hover:text-primary_darker hover:underline">Previous
-                                Donations</a></li>
+                                class="hover:transition-[underline,color] hover:text-primary_darker hover:underline">Artworks</a></li>
                         <li><a href=""
                                 class="hover:transition-[underline,color] hover:text-primary_darker hover:underline">Contact
                                 Us</a></li>
@@ -86,12 +85,6 @@
         </div>
 
         <div>
-            <!-- <div class="flex flex-row items-center lg:hidden">
-            <div class="donate w-full">
-                <button class="bg-primary text-primary_darker w-full py-3.5 font-bold">Donate</button>
-            </div>
-        </div> -->
-
             <nav class="fixed left-0 top-0 bottom-0 w-8/12 flex flex-col bg-white min-h-max justify-center shadow-2xl max-w-sm ham-menu ml-[-100%] z-50"
                 id="ham-menu">
                 <ul class="ml-[20%] lg:flex">
@@ -99,8 +92,7 @@
                             class="hover:text-primary_darker transition-colors">About Us</a></li>
                     <li class="mb-5 "><a href="#mission" onclick="lenis.scrollTo('#mission')"
                             class="hover:text-primary_darker transition-colors">Our Mission</a></li>
-                    <li class="mb-5 "><a href="" class="hover:text-primary_darker transition-colors">Previous
-                            Donations</a></li>
+                    <li class="mb-5 "><a href="" class="hover:text-primary_darker transition-colors">Artworks</a></li>
                     <li class="mb-5 "><a href="" class="hover:text-primary_darker transition-colors">Contact Us</a></li>
                     <li><a href="" class="hover:text-primary_darker transition-colors">Donate</a></li>
                 </ul>
@@ -165,9 +157,9 @@
     <section id="about-us" class="bg-white">
         <div class="about-us-container px-5 flex flex-wrap items-center justify-center my-16">
             <div class="about-us-text-container max-w-3xl">
-                <h1
+                <h2
                     class="about-us-heading about-us-text text-[1.7rem] lg:text-7xl font-display text-primary_darker leading-[1.1] to-animate">
-                    Who we are</h1>
+                    Who we are</h2>
                 <p class="about-us-text text-primary_dark mt-10 max-w-prose to-animate">We are a group of students.
                     Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo laboriosam odio provident animi
                     reiciendis hic! Accusamus quis tenetur aliquid fugiat dolore. Eius natus, corrupti alias ad
@@ -188,9 +180,9 @@
                 <img class="to-animate mission-img" src="assets/images/mission.svg" alt="mission image">
             </div>
             <div class="mission-text-container max-w-3xl mx-auto">
-                <h1
+                <h2
                     class="mission-heading mission-text text-[1.7rem] lg:text-right lg:text-7xl font-display text-white leading-[1.1] to-animate">
-                    Our Mission</h1>
+                    Our Mission</h2>
                 <p class="mission-text text-white mt-10 lg:text-right to-animate">Lorem ipsum dolor sit amet consectetur
                     adipisicing elit. Tempora quam nobis explicabo laudantium praesentium velit hic sapiente, veritatis
                     voluptate. Magnam vel aperiam, nesciunt obcaecati sed tempore sint dicta nam aut.
@@ -200,6 +192,33 @@
             </div>
         </div>
     </section>
+    <!-- MISSION END -->
+
+    <!-- ARTWORKS START  -->
+    <section id="artwork">
+        <div class="artwork-container px-5 my-16">
+            <div class="artwork-text-container mb-16">
+                <h2 class="artwork-heading artwork-text text-[1.7rem] text-center lg:text-7xl font-display text-primary_darker leading-[1.1] to-animate">Artworks</h2>
+            </div>
+            <div class="artwork-images-container">
+                <img src="assets/images/artwork-1.jpg" alt="" class="artwork-image">
+                <img src="assets/images/artwork-2.jpg" alt="" class="artwork-image">
+                <img src="assets/images/artwork-3.jpg" alt="" class="artwork-image">
+                <img src="assets/images/artwork-4.jpg" alt="" class="artwork-image">
+            </div>
+            <div class="artwork-for-sale-container flex flex-col lg:flex-row gap-5 mt-5 lg:mt-8 justify-start lg:gap-10">
+                <div class="artwork-image-for-sale-container relative lg:[width:_clamp(1rem,45%,100%);]">
+                    <img src="assets/images/artwork-5.jpg" alt="" class="artwork-image artwork-image-for-sale aspect-square rounded-md object-cover brightness-110 contrast-12 w-full">
+                </div>
+                <div class="artwork-for-sale-text-container flex flex-col gap-3 lg:justify-center lg:gap-6">
+                    <h3 class="hidden artwork-for-sale-heading text-2xl lg:text-3xl lg:block font-display">Artwork for sale</h3>
+                    <p class="artwork-for-sale-text max-w-prose">Support our cause by buying this beautiful artwork handcrafted with love by our very own founder Miss Shalini Reddy</p>
+                    <button class="artwork-for-sale-btn py-4 rounded-lg bg-primary_darker shadow-lg font-bold text-white lg:max-w-[14rem] text-lg">Buy Now</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
 
 </body>
 

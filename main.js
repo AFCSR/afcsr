@@ -60,3 +60,13 @@ setInterval(() => {
         sparkle.style.animation = ''; // Re-enable animation
     });
 }, 1000);
+
+artwork_images = document.querySelectorAll('.artwork-image');
+
+if (window.innerWidth <= 768) {
+    artwork_images.forEach(artwork_image => {
+        artwork_image.addEventListener('click', () => {
+            artwork_image.requestFullscreen();
+        }
+    )});
+};

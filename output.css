@@ -4,6 +4,10 @@
   src: url(assets/fonts/Gatwick.otf);
 }
 
+body {
+  overflow-x: hidden;
+}
+
 .menu {
   background-color: transparent;
   border: none;
@@ -252,6 +256,68 @@ section {
 
 .highlight-sparkle > svg {
   animation: rotate 1s linear infinite;
+}
+
+.artwork-images-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 3vmin;
+}
+
+.artwork-images-container > img {
+  width: 100%;
+  height: 100%;
+  max-height: 70vh;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+  border-radius: 0.5rem;
+  aspect-ratio: 9 / 20;
+  transition: all 800ms ease-in-out;
+}
+
+.artwork-images-container:hover img:not(:hover) {
+  transform: scale(1);
+  filter: grayscale(80%) blur(2px) brightness(0.8) contrast(0.8);
+}
+
+.artwork-images-container:hover img:hover {
+  transform: scale(1.02);
+  filter: grayscale(0%) blur(0px) brightness(1.25) contrast(1.2);
+}
+
+@media (max-width: 768px) {
+  .artwork-images-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .artwork-images-container > img {
+    aspect-ratio: 1 / 1;
+  }
+
+  .artwork-images-container:hover > img:hover {
+    filter: none;
+    transform: none;
+  }
+
+  .artwork-images-container:hover > img:not(:hover) {
+    filter: none;
+  }
+}
+
+.artwork-image-for-sale-container::after {
+  content: "For Sale";
+  position: absolute;
+  display: block;
+  top: 2%;
+  right: 2%;
+  padding: 0.5rem;
+  background-color: #b7deec;
+  color: #1c394d;
+  font-size: 1.2rem;
+  font-weight: bold;
+  border-radius: 0.475rem;
 }
 
 /*
@@ -794,6 +860,10 @@ video {
   position: fixed;
 }
 
+.relative {
+  position: relative;
+}
+
 .bottom-0 {
   bottom: 0px;
 }
@@ -817,6 +887,11 @@ video {
 .mx-auto {
   margin-left: auto;
   margin-right: auto;
+}
+
+.my-12 {
+  margin-top: 3rem;
+  margin-bottom: 3rem;
 }
 
 .my-16 {
@@ -848,12 +923,24 @@ video {
   margin-top: 2.5rem;
 }
 
+.mt-5 {
+  margin-top: 1.25rem;
+}
+
+.mb-16 {
+  margin-bottom: 4rem;
+}
+
 .flex {
   display: flex;
 }
 
 .hidden {
   display: none;
+}
+
+.aspect-square {
+  aspect-ratio: 1 / 1;
 }
 
 .h-full {
@@ -917,6 +1004,10 @@ video {
   align-items: center;
 }
 
+.justify-start {
+  justify-content: flex-start;
+}
+
 .justify-center {
   justify-content: center;
 }
@@ -925,8 +1016,20 @@ video {
   justify-content: space-between;
 }
 
+.gap-3 {
+  gap: 0.75rem;
+}
+
+.gap-5 {
+  gap: 1.25rem;
+}
+
 .rounded-lg {
   border-radius: 0.5rem;
+}
+
+.rounded-md {
+  border-radius: 0.375rem;
 }
 
 .rounded-sm {
@@ -956,6 +1059,11 @@ video {
 .bg-white {
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+}
+
+.object-cover {
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .px-10 {
@@ -988,11 +1096,6 @@ video {
   padding-bottom: 0.75rem;
 }
 
-.py-3\.5 {
-  padding-top: 0.875rem;
-  padding-bottom: 0.875rem;
-}
-
 .py-4 {
   padding-top: 1rem;
   padding-bottom: 1rem;
@@ -1011,12 +1114,22 @@ video {
   font-family: Gatwick, sans-serif;
 }
 
+.text-2xl {
+  font-size: 1.5rem;
+  line-height: 2rem;
+}
+
 .text-\[1\.7rem\] {
   font-size: 1.7rem;
 }
 
 .text-\[2rem\] {
   font-size: 2rem;
+}
+
+.text-lg {
+  font-size: 1.125rem;
+  line-height: 1.75rem;
 }
 
 .text-sm {
@@ -1078,6 +1191,11 @@ video {
   outline-style: solid;
 }
 
+.brightness-110 {
+  --tw-brightness: brightness(1.1);
+  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+}
+
 .transition-colors {
   transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
@@ -1120,6 +1238,10 @@ video {
     margin-left: 2.5rem;
   }
 
+  .lg\:mt-8 {
+    margin-top: 2rem;
+  }
+
   .lg\:block {
     display: block;
   }
@@ -1132,12 +1254,37 @@ video {
     display: none;
   }
 
+  .lg\:max-w-\[14rem\] {
+    max-width: 14rem;
+  }
+
   .lg\:max-w-\[80px\] {
     max-width: 80px;
   }
 
+  .lg\:flex-row {
+    flex-direction: row;
+  }
+
+  .lg\:justify-center {
+    justify-content: center;
+  }
+
+  .lg\:gap-10 {
+    gap: 2.5rem;
+  }
+
+  .lg\:gap-6 {
+    gap: 1.5rem;
+  }
+
   .lg\:text-right {
     text-align: right;
+  }
+
+  .lg\:text-3xl {
+    font-size: 1.875rem;
+    line-height: 2.25rem;
   }
 
   .lg\:text-7xl {
@@ -1148,5 +1295,9 @@ video {
   .lg\:text-base {
     font-size: 1rem;
     line-height: 1.5rem;
+  }
+
+  .lg\:\[width\:_clamp\(1rem\2c 45\%\2c 100\%\)\;\] {
+    width: clamp(1rem,45%,100%);;
   }
 }
