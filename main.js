@@ -1,3 +1,19 @@
+// Nav remove on scroll
+
+var lastScrollTop;
+navbar = document.getElementsByTagName('header')[0];
+window.addEventListener('scroll', function () {
+    var scrollTop = window.scrollY || document.documentElement.scrollTop;
+    if (scrollTop > lastScrollTop) {
+        navbar.style.top = '-100%';
+    }
+    else {
+        navbar.style.top = '0';
+    }
+    lastScrollTop = scrollTop;
+});
+
+
 // Menu Toggle
 
 const menu = document.querySelector('#ham-menu');
@@ -23,30 +39,7 @@ menu_btn.addEventListener('click', () => {
     }
 });
 
-// Intersection Observer
-
-let options = {
-    rootmargin: "200px",
-};
-
-let callback = (entries) => {
-    entries.map((entry) => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add("animate");
-        } else {
-            entry.target.classList.remove("animate");
-        }
-    });
-};
-
-const observer = new IntersectionObserver(callback, options);
-
-let elements = document.querySelectorAll(".to-animate");
-
-elements.forEach((elem) => {
-    observer.observe(elem);
-} );
-
+// Sparkles Animation
 
 const sparkles = document.querySelectorAll('.highlight-sparkle');
 
@@ -67,6 +60,30 @@ if (window.innerWidth <= 768) {
     artwork_images.forEach(artwork_image => {
         artwork_image.addEventListener('click', () => {
             artwork_image.requestFullscreen();
-        }
-    )});
+        });
+    });
 };
+
+// Intersection Observer
+
+let options = {
+    threshold: 0.1,
+};
+
+let callback = (entries) => {
+    entries.map((entry) => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add("animate");
+        } else {
+            entry.target.classList.remove("animate");
+        }
+    });
+};
+
+const observer = new IntersectionObserver(callback, options);
+
+let elements = document.querySelectorAll(".to-animate");
+
+elements.forEach((elem) => {
+    observer.observe(elem);
+});
