@@ -227,7 +227,7 @@ section {
     object-position: center;
     border-radius: 0.5rem;
     aspect-ratio: 9 / 20;
-    transition: all 800ms ease-in-out;
+    transition: all 500ms ease-in-out;
 }
 
 .artwork-images-container:hover img:not(:hover) {
@@ -328,7 +328,12 @@ section {
 }
 
 .for-sale-label.animate {
-    animation: tingle 1s ease-in-out 200ms forwards, wiggle 1s ease-in-out 200ms forwards;
+    animation: tingle 1s ease-in-out 1s forwards, wiggle 1s ease-in-out 1s forwards;
+}
+
+#mission {
+    background-color: #4e7283;
+    background-image: url("assets/images/mission-pattern.svg");
 }
 
 @tailwind base;

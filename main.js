@@ -54,15 +54,15 @@ setInterval(() => {
     });
 }, 1000);
 
-artwork_images = document.querySelectorAll('.artwork-image');
+// artwork_images = document.querySelectorAll('.artwork-image');
 
-if (window.innerWidth <= 768) {
-    artwork_images.forEach(artwork_image => {
-        artwork_image.addEventListener('click', () => {
-            artwork_image.requestFullscreen();
-        });
-    });
-};
+// if (window.innerWidth <= 768) {
+//     artwork_images.forEach(artwork_image => {
+//         artwork_image.addEventListener('click', () => {
+//             artwork_image.requestFullscreen();
+//         });
+//     });
+// };
 
 // Intersection Observer
 
@@ -86,4 +86,30 @@ let elements = document.querySelectorAll(".to-animate");
 
 elements.forEach((elem) => {
     observer.observe(elem);
+});
+
+// artwork image animation
+
+let artwork_container = document.querySelector('#artwork-images-container');
+let artwork_images = Array.from(artwork_container.getElementsByClassName('artwork-image'));
+
+artwork_images.forEach(artwork_image => {
+    artwork_image.addEventListener('mouseover', () => {
+        let the_image = artwork_images.find(image => image == artwork_image);
+        the_image.classList.add('animate');
+        artwork_images.forEach(other_artwork_image => {
+            if (other_artwork_image != the_image.parentElement) {
+                other_artwork_image.querySelector('img').classList.add('fade');
+            }
+        });
+    });
+
+    // artwork_image.addEventListener('mouseout', () => {
+    //     the_image.classList.remove('animate');
+    //     artwork_images.forEach(other_artwork_image => {
+    //         if (other_artwork_image != the_image.parentElement) {
+    //             other_artwork_image.querySelector('img').classList.remove('fade');
+    //         }
+    //     });
+    // });
 });
